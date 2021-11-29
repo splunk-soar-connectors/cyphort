@@ -1,2 +1,2 @@
 **Unreleased**
-* Release on splunk soar [PAPP-21321]
+* Releasing as open-source Community app [PAPP-21321]
