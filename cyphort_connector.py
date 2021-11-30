@@ -62,7 +62,7 @@ class CyphortConnector(BaseConnector):
 
         try:
             r = requests.post(self._base_url + endpoint, data=data, headers=headers,
-                              params=request_params, verify=config[phantom.APP_JSON_VERIFY])
+                              params=request_params, verify=config[phantom.APP_JSON_VERIFY])  # nosemgrep
         except Exception as e:
             return (action_result.set_status(phantom.APP_ERROR, CYPHORT_ERR_SERVER_CONNECTION, e), resp_json, status_code)
 
@@ -118,7 +118,7 @@ class CyphortConnector(BaseConnector):
         upload_url = CYPHORT_REST_API_UPLOAD_FILE_URL.format(server=config[CYPHORT_JSON_SERVER])
 
         try:
-            r = requests.post(upload_url, headers=self._headers, files=files, verify=config[phantom.APP_JSON_VERIFY])
+            r = requests.post(upload_url, headers=self._headers, files=files, verify=config[phantom.APP_JSON_VERIFY])  # nosemgrep
         except Exception as e:
             return action_result.set_status(phantom.APP_ERROR, CYPHORT_ERR_SERVER_CONNECTION, e)
 
