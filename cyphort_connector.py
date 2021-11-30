@@ -62,8 +62,7 @@ class CyphortConnector(BaseConnector):
 
         try:
             r = requests.post(self._base_url + endpoint, data=data, headers=headers,
-                              params=request_params, 
-                              verify=config[phantom.APP_JSON_VERIFY])  # nosemgrep
+                              params=request_params, verify=config[phantom.APP_JSON_VERIFY])
         except Exception as e:
             return (action_result.set_status(phantom.APP_ERROR, CYPHORT_ERR_SERVER_CONNECTION, e), resp_json, status_code)
 
